@@ -16,6 +16,7 @@
   --background-color-logo: #f5f4fa;
   --background-color-btn-unactive: #f5f4fa;
   --border-color: #afb1b8;
+  --icon-color: #afb1b8;
 }
 
 * {
@@ -64,14 +65,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
 }
-/* 
-.logo-and-navi {
-   czesc polaczona dla logo i nav, aby oddzielic to od sekcji kontaktowej z prawej strony 
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  wysrodkowanie w pionie 
-} */
 
 .logo {
   font-family: 'Raleway', sans-serif;
@@ -119,9 +112,7 @@ body {
   gap: 30px;
   align-items: center;
   /* wysrodkowanie w pionie */
-  --color2: var(--font-color-contact-header);
-  --color1: var(--font-color-contact-header);
-  /* zmienne koloru dla ikon */
+  fill: var(--font-color-contact-header);
 }
 
 .contact-header-item {
@@ -132,6 +123,7 @@ body {
   line-height: 1.1;
   /* do wysrodkowania ikon w stosunku do tekstu linku */
   display: flex;
+
   align-items: center;
   gap: 10px;
 }
@@ -139,10 +131,9 @@ body {
 .contact-header-item:hover,
 .contact-header-item:focus {
   color: var(--active-color);
-  --color2: var(--active-color);
-  --color1: var(--active-color);
-    transition-property: color, ;
-  transition-duration: 2250ms;
+  fill: currentColor;
+  transition-property: color, fill;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /* zmienne koloru dla ikon */
 }
@@ -224,19 +215,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  fill: var(--font-color-dark-background);
   /* wycentrowanie ikon dla tla /pdswietlenia*/
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  --color1: var(--font-color-dark-background);
-  /* color1 zmienna koloru ikony */
   cursor: pointer;
 }
 .footer-follow-us-icons-item:hover,
 .footer-follow-us-icons-item:focus {
   background-color: var(--active-color);
-  transition-property: background-color;
+  transition-property: background-color, fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -432,15 +422,17 @@ backdrop - przyciemnianie tyłu strony
   border-radius: 50%;
   background-color: transparent;
   /* transparent - przezroczysty */
+  fill: var(--icon-color);
+  /* kolor ikony */
   cursor: pointer;
 }
 
 .team-social-media-item:hover,
 .team-social-media-item:focus {
-  --color1: var(--font-color-dark-background);
-  /* color1 zmienna dla koloru ikon */
+  fill: var(--font-color-dark-background);
+  /* kolor ikony */
   background-color: var(--active-color);
-  transition-property: var(--color1), background-color;
+  transition-property: fill, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -462,14 +454,15 @@ backdrop - przyciemnianie tyłu strony
 }
 
 .our-clients-item {
-  max-width: 170px;
-  max-height: 92px;
-  /* wymiary dla ikon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 92px;
+  /* wymiary obramowania */
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  --color1: #afb1b8;
-  --color2: #afb1b8;
-  /* color1 i 2 dotycza ikon wykorzytywanych */
+  fill: var(--icon-color);
   cursor: pointer;
 }
 
@@ -477,13 +470,12 @@ backdrop - przyciemnianie tyłu strony
 .our-clients-item:focus {
   border: 1px solid var(--active-color);
   border-radius: 4px;
-  --color1: var(--active-color);
-  --color2: var(--active-color);
-  /* color2 dla logo nr 4!!! */
-  transition-property: border, var(--color1), var(--color2);
-  transition-duration: 2250ms;
+  fill: var(--active-color);
+  transition-property: border, fill;
+  transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 /* @@@@@@@@@@STRONA PORTFOLIO@@@@@@@@@@@@ */
 /* przyciski do filtrowania */
 .filter-list {

@@ -1,0 +1,36 @@
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  fill: var(--icon-color);
+
+  V   TO DOPISZ @@@@@@@@@@@@@@@@@@@@@@@@@@@ 
+  align-items: center;
+  justify-content: center;
+
+}
+
+V W SUMIE TO CAŁE WYWAL XDDDDDDDDD
+.footer-icons:hover, 
+.footer-icons:focus {<<<<<<<<<HOVER I FOCUS MA BYC NIZEJ, TU NIE BO TO DIV I PAMIETAJ BEZ SPACJEN
+  fill: var(--text-color-light);
+  background-color: var(--background-button); 
+  border-radius: 50%;
+}
+
+-------------- DO TEGO MIEJSCA
+
+.footer-icons-items { <<<<<< O TUTEJ HOVER I FOCUS
+  background-color: var(--background-button-footer);
+  fill: var(--icon-color-light);
+  border-radius: 50%;
+
+TO DOPISZ !!!!!!! BO TRZEBA WYCENTROWAC IKONY W TO KOLKO
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* wycentrowanie ikon dla tla /pdswietlenia*/
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+}
