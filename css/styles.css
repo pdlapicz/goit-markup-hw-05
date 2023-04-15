@@ -109,6 +109,9 @@ body {
 .navigation-link:hover,
 .navigation-link:focus {
   color: var(--active-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-header {
@@ -138,6 +141,9 @@ body {
   color: var(--active-color);
   --color2: var(--active-color);
   --color1: var(--active-color);
+    transition-property: color, ;
+  transition-duration: 2250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /* zmienne koloru dla ikon */
 }
 
@@ -230,6 +236,9 @@ body {
 .footer-follow-us-icons-item:hover,
 .footer-follow-us-icons-item:focus {
   background-color: var(--active-color);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* HEADER I FOOTER ZAKONCZONE */
@@ -288,6 +297,26 @@ body {
   /* button ma domyslne color: #000000 */
   background-color: var(--active-color);
 }
+/* 
+... height 300
+background color
+position:fixed;
+z-index:1;
+transition-property: visibility, opacity, transform;
+transition-duration:2s;
+transform: translateX(-50%) translateY(-50%) scale(1) rotate (720deg) skew(0deg,0deg);
+opacity:1;
+visibility:visible;
+display:block;
+}
+
+.is-hidden{
+  pointer-events:none;
+  visibility:hidden;
+  opacity:0;
+  transform: translateX(-50%) translateY(-50%) scale(0) rotate (0deg) skew(40deg,40deg);
+backdrop - przyciemnianie tyłu strony
+ */
 
 /* SEKCJA TEKSTOWA */
 .our-strengths {
@@ -411,6 +440,9 @@ body {
   --color1: var(--font-color-dark-background);
   /* color1 zmienna dla koloru ikon */
   background-color: var(--active-color);
+  transition-property: var(--color1), background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*SEKCJA NASI KLIENCI*/
@@ -423,13 +455,13 @@ body {
   margin-bottom: 50px;
 }
 
-.our-clients-list {
+.our-clients {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
 }
 
-.our-clients-list-item {
+.our-clients-item {
   max-width: 170px;
   max-height: 92px;
   /* wymiary dla ikon */
@@ -441,13 +473,16 @@ body {
   cursor: pointer;
 }
 
-.our-clients-list-item:hover,
-.our-clients-list-item:focus {
+.our-clients-item:hover,
+.our-clients-item:focus {
   border: 1px solid var(--active-color);
   border-radius: 4px;
   --color1: var(--active-color);
   --color2: var(--active-color);
   /* color2 dla logo nr 4!!! */
+  transition-property: border, var(--color1), var(--color2);
+  transition-duration: 2250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* @@@@@@@@@@STRONA PORTFOLIO@@@@@@@@@@@@ */
 /* przyciski do filtrowania */
