@@ -20,13 +20,13 @@
     <header class="header">
       <div class="container head-section">
         <a class="logo" href="./index.html">Web<span class="logo-header-color">Studio</span></a>
-        <ul class="navigation">
+        <div class="navigation">
           <!--menu nawigacyjne-->
-          <li><a class="navigation-link" href="./index.html">Agencja</a></li>
+          <a class="navigation-link is-active" href="./index.html">Agencja</a>
           <!-- is-active -->
-          <li><a class="navigation-link" href="./portfolio.html">Portfolio</a></li>
-          <li><a class="navigation-link" href="#">Kontakt</a></li>
-        </ul>
+          <a class="navigation-link" href="./portfolio.html">Portfolio</a>
+          <a class="navigation-link" href="#">Kontakt</a>
+        </div>
         <div class="contact-header">
           <!--linki kontaktowe, prawa strona naglowka-->
           <a class="contact-header-item" href="mailto:info@devstudio.com"
@@ -123,29 +123,32 @@
           <div class="container">
             <h2 class="what-do-header">Czym się zajmujemy</h2>
             <ul class="what-do-list">
-              <li>
+              <li class="what-do-list-item">
                 <img
                   src="images/activities/activities_img1.jpg"
                   alt="praca przed laptopem na klawiaturze"
                   width="370"
                   height="294"
                 />
+                <span class="what-do-photo-text">aplikacje komputerowe</span>
               </li>
-              <li>
+              <li class="what-do-list-item">
                 <img
                   src="images/activities/activities_img2.jpg"
                   alt="praca z telefonem i laptopem"
                   width="370"
                   height="294"
                 />
+                <span class="what-do-photo-text">aplikacje mobilne</span>
               </li>
-              <li>
+              <li class="what-do-list-item">
                 <img
                   src="images/activities/activities_img3.jpg"
                   alt="wyswietlanie palety kolorow na tablecie"
                   width="370"
                   height="294"
                 />
+                <span class="what-do-photo-text">rozwiązania graficzne</span>
               </li>
             </ul>
           </div>

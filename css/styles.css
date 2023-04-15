@@ -98,6 +98,7 @@ body {
   color: var(--font-color);
   font-weight: 500;
   font-size: 15px;
+
 }
 .navigation-link:hover,
 .navigation-link:focus {
@@ -105,6 +106,24 @@ body {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-active {
+  position: relative;
+  height: 100%;
+  display: block;
+  color: var(--active-color);
+}
+
+.is-active::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  bottom: -2rem;
+  left: 0;
+  right: 0;
+  background-color: var(--active-color);
+  border-radius: 2px;
 }
 
 .contact-header {
@@ -364,6 +383,38 @@ backdrop - przyciemnianie tyłu strony
   justify-content: center;
   /* ulozenie mozliwie do srodka */
 }
+
+.what-do-list-item {
+  position: relative;
+  overflow: hidden;
+}
+.what-do-list-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.what-do-photo-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* do dolu i rozciagniete po szerokosci obrazu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* wysrodkowanie tekstu */
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  /* text-align:center; */
+  height: 70px;
+  color: var(--font-color-dark-background);
+  background-color: #2f303acc;
+  cursor: default;
+}
+
+.what-do-list-item > 
 
 /* SEKCJA TEAM */
 .team {
