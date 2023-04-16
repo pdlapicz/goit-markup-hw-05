@@ -98,7 +98,6 @@ body {
   color: var(--font-color);
   font-weight: 500;
   font-size: 15px;
-
 }
 .navigation-link:hover,
 .navigation-link:focus {
@@ -110,7 +109,6 @@ body {
 
 .is-active {
   position: relative;
-  height: 100%;
   display: block;
   color: var(--active-color);
 }
@@ -119,7 +117,7 @@ body {
   content: '';
   position: absolute;
   height: 4px;
-  bottom: -2rem;
+  top: 45px;
   left: 0;
   right: 0;
   background-color: var(--active-color);
@@ -582,11 +580,22 @@ backdrop - przyciemnianie tyłu strony
   /* pozbycie sie odstepu miedzy obrazem a tekstem ponizej */
 }
 
+.gallery-list-item {
+  position: relative;
+  cursor: pointer;
+  /* karta z galerii */
+}
+
+
+
 /* efekt cienia po najechaniu kursowem na karte , bez focus */
 .gallery-list-item:hover,
 .gallery-list-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-list-item-description {
@@ -599,6 +608,7 @@ backdrop - przyciemnianie tyłu strony
   font-size: 18px;
   letter-spacing: 0.06em;
   line-height: 36px;
+
 }
 
 .category {
@@ -606,5 +616,37 @@ backdrop - przyciemnianie tyłu strony
   color: var(--font-color-paragraph);
   letter-spacing: 0.03em;
   line-height: 30px;
+
+}
+
+.gallery-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 49px 45px 49px 24px;
+  background-color: #2196f3e5;
+  color: var(--font-color-dark-background);
+  font-size: 18px;
+  line-height: 1.56;
+  visibility: hidden;
+
+  /* overflow: hidden; */
+}
+/* tylko po najechaniu! */
+
+.gallery-list-item:hover .gallery-label {
+  visibility: visible;
+  animation-name: slideIn;
+  animation-duration: 2250ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode:forwards;
+  transform: translateY(100%);
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0%);
+  }
 }
 /* KONIEC PORTFOLIO */
