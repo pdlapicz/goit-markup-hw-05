@@ -586,8 +586,6 @@ backdrop - przyciemnianie tyłu strony
   /* karta z galerii */
 }
 
-
-
 /* efekt cienia po najechaniu kursowem na karte , bez focus */
 .gallery-list-item:hover,
 .gallery-list-item:focus {
@@ -608,7 +606,6 @@ backdrop - przyciemnianie tyłu strony
   font-size: 18px;
   letter-spacing: 0.06em;
   line-height: 36px;
-
 }
 
 .category {
@@ -616,7 +613,6 @@ backdrop - przyciemnianie tyłu strony
   color: var(--font-color-paragraph);
   letter-spacing: 0.03em;
   line-height: 30px;
-
 }
 
 .gallery-label {
@@ -629,18 +625,19 @@ backdrop - przyciemnianie tyłu strony
   color: var(--font-color-dark-background);
   font-size: 18px;
   line-height: 1.56;
-  visibility: hidden;
+
+  /* visibility: hidden; */
 
   /* overflow: hidden; */
 }
 /* tylko po najechaniu! */
 
 .gallery-list-item:hover .gallery-label {
+  
   visibility: visible;
   animation-name: slideIn;
   animation-duration: 2250ms;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-fill-mode:forwards;
   transform: translateY(100%);
 }
 
