@@ -51,7 +51,9 @@
           <div class="container">
             <!-- szerokosc 1200 -->
             <h1 class="title-side">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-            <button class="btn-order" type="button">Zamów usługe</button>
+            <!-- data-modal-open/close, data-modal to atrybuty z JS -->
+            <button data-modal-open class="btn-order" type="button">Zamów usługe</button>
+
             <!-- 
               button klasa data-modal-open
               potem div class modal is-hidden
@@ -393,7 +395,12 @@
         <div class="footer-empty"></div>
       </div>
     </footer>
+    <div data-modal class="modal is-hidden">
+      <button data-modal-close>X</button>
+    </div>
+    <!-- lepiej dac na koncu, gdy bedzie przed buttonem, to przy ladowanie strony na poczatku sie wyswietli -->
     <script src="./js/modal.js"></script>
+    <!-- skrypt dla okna modalnego -->
     <!-- musi byc na koncu poniewaz w innym wypadku moze nie zadzialac -->
   </body>
 </html>
