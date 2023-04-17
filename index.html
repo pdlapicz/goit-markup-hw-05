@@ -53,12 +53,6 @@
             <h1 class="title-side">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
             <!-- data-modal-open/close, data-modal to atrybuty z JS -->
             <button data-modal-open class="btn-order" type="button">Zamów usługe</button>
-
-            <!-- 
-              button klasa data-modal-open
-              potem div class modal is-hidden
-              z buttonem data-modal-close
-             -->
           </div>
         </div>
       </section>
@@ -395,8 +389,15 @@
         <div class="footer-empty"></div>
       </div>
     </footer>
-    <div data-modal class="modal is-hidden">
-      <button data-modal-close>X</button>
+    <div data-modal class="is-hidden backdrop">
+      <!-- bez osobnego diva backdrop zadziala tylko na okno modalne -->
+      <div class="modal">
+        <button data-modal-close class="btn-close">
+          <svg width="11" height="11">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
     </div>
     <!-- lepiej dac na koncu, gdy bedzie przed buttonem, to przy ladowanie strony na poczatku sie wyswietli -->
     <script src="./js/modal.js"></script>
