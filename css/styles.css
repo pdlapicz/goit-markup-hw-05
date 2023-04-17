@@ -581,7 +581,6 @@ backdrop - przyciemnianie tyłu strony
 }
 
 .gallery-list-item {
-  position: relative;
   cursor: pointer;
   /* karta z galerii */
 }
@@ -615,35 +614,26 @@ backdrop - przyciemnianie tyłu strony
   line-height: 30px;
 }
 
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
 .gallery-label {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   padding: 49px 45px 49px 24px;
   background-color: #2196f3e5;
   color: var(--font-color-dark-background);
   font-size: 18px;
   line-height: 1.56;
-
-  /* visibility: hidden; */
-
-  /* overflow: hidden; */
+  transform: translateY(100%);
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* tylko po najechaniu! */
 
 .gallery-list-item:hover .gallery-label {
-  
-  visibility: visible;
-  animation-name: slideIn;
-  animation-duration: 2250ms;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(100%);
-}
-
-@keyframes slideIn {
-  to {
-    transform: translateY(0%);
-  }
+  transform: translateY(0);
 }
 /* KONIEC PORTFOLIO */
