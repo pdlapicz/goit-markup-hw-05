@@ -366,7 +366,7 @@ body {
   right: 0;
   margin: 8px;
   background-color: var(--background-color-main);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(14, 7, 7, 0.1);
   /* krawedzie "przycisku" */
   width: 30px;
   height: 30px;
