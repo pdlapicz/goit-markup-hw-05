@@ -314,8 +314,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  transition-duration: 600ms;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
   /* wysrodkowanie do ekranu, bez transform lewy gorny rog bedzie na srodku strony */
   width: 528px;
   min-height: 581px;
@@ -324,32 +323,39 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  opacity: 1;
+  /* musi byc aby byla animacja otwierania */
+  transition-duration: 600ms;
+  transition-property: transform opacity background-color;
 }
 .is-hidden {
   pointer-events: none;
   /* nie klikalny (pomimo, że jest niewidoczny) */
   visibility: hidden;
 }
-/* aby zadzialalo przejscie przy wlaczeniu i wylaczeniu */
+/* aby zadzialalo przejscie przy włączeniu i wylaczeniu */
 .is-hidden .modal {
   position: absolute;
-  width: 0;
-  min-height: 0;
-  min-height: 0;
-  /* EFEKT ZNIKANIA */
-  transform: translate(0);
+  /* EFEKT ZNIKANIA poprzez scale, translate, obrot i scięcie, aby "wychodzilo" od srodka */
+  transform: translate(-50%, -50%) scale(0) rotate(45deg) skew(-45deg, -45deg);
+  background-color: var(--background-color-section);
+  opacity: 0;
+  transition-property: transform opacity background-color;
   transition-duration: 600ms;
 }
 
 .backdrop {
   /* backdrop - przyciemnianie tyłu strony po otwarciu okna modalnego*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* wysrodkowanie */
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  overflow: hidden;
 }
 
 .btn-close {
@@ -366,6 +372,7 @@ body {
   height: 30px;
   /* tlo ikony, koło */
   border-radius: 50%;
+  cursor: pointer;
 }
 .btn-close:hover,
 .btn-close:focus {
@@ -633,7 +640,6 @@ body {
   /* karta z galerii */
 }
 
-/* efekt cienia po najechaniu kursowem na karte , bez focus */
 .gallery-list-item:hover,
 .gallery-list-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -691,7 +697,8 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* tylko po najechaniu! */
-.gallery-list-item:hover .gallery-label {
+.gallery-list-item:hover .gallery-label,
+.gallery-list-item:focus .gallery-label {
   transform: translateY(0);
 }
 /* KONIEC PORTFOLIO */
